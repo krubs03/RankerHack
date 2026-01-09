@@ -13,8 +13,10 @@
   "type": "module",
   "dependencies": {
     "@clerk/clerk-react": "^5.59.3",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "inngest": "^3.49.0",
     "mongoose": "^9.1.2",
     "nodemon": "^3.1.11"
   }

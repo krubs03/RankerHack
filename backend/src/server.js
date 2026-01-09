@@ -1,9 +1,19 @@
 import express from "express";
+import cors from "cors";
 import path from "path";
 import { ENV } from "./lib/Env.js";
 import { connectDB } from "./lib/db.js";
+import { inngest, functions } from "./lib/inngest.js";
+import { serve } from "inngest/express";
 
 const app = express();
+
+// Middleware to parse JSON requests
+app.use(express.json());
+// Credentials: true => Allows addition of cookies in requests
+app.use(cors({origin: ENV.CLIENT_URL, credentials: true}));
+
+app.use("api/inngest", serve({client: inngest, functions, signingKey: ENV.INGEST_SIGNING_KEY}));
 
 const __dirname = path.resolve();
 
