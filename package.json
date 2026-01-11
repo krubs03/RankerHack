@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/krubs03/RankerHack/issues"
   },
-  "homepage": "https://github.com/krubs03/RankerHack#readme"
+  "homepage": "https://github.com/krubs03/RankerHack#readme",
+  "dependencies": {
+    "stream": "^0.0.3"
+  }
 }
