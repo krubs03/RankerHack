@@ -7,6 +7,7 @@ import { serve } from "inngest/express";
 import { clerkMiddleware } from "@clerk/express";
 import { protectRoute } from "./middleware/protectRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
+import sessionRoutes from "./routes/sessionRoutes.js";
 
 const app = express();
 
@@ -31,5 +32,6 @@ app.use(
 );
 
 app.use("/api/chat", chatRoutes);
+app.use("/api/sessions", sessionRoutes);
 
 export default app;

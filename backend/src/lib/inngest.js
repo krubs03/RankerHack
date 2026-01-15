@@ -64,4 +64,6 @@ const deleteUserData = inngest.createFunction(
   }
 );
 
+//TODO: Send email after user sign-up
+
 export const functions = [syncUserData, deleteUserData];
