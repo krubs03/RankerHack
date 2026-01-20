@@ -1,2 +1,12 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+    themes: all;
+}
+
+/* Adds pointer cursor to all buttons and elements with role="button" when they are not disabled */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

@@ -1,36 +1,22 @@
 import { Navigate, Route, Routes } from 'react-router';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+import DashboardPage from './pages/DashboardPage';
 import ProblemsPage from './pages/ProblemsPage';
 import { useUser } from '@clerk/clerk-react';
 import { Toaster } from 'react-hot-toast';
 
-function ProtectedRoute({ children }) {
-  const { isSignedIn, isLoaded } = useUser();
-
-  if (!isLoaded) return null; // or loader
-
-  if (!isSignedIn) {
-    return <Navigate to="/" replace />;
-  }
-
-  return children;
-}
-
 function App() {
 
-  const { isSignedIn } = useUser();
+  const { isSignedIn, isLoaded } = useUser();
+
+  if(!isLoaded) return null;
   console.log("User signed in:", isSignedIn);
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/problems" element={
-          <ProtectedRoute>
-            <ProblemsPage />
-          </ProtectedRoute>
-        } />
+        <Route path="/" element={!isSignedIn ? <HomePage /> : <Navigate to="/dashboard" />} />
+        <Route path="/dashboard" element={isSignedIn ? <DashboardPage /> : <Navigate to="/" />} />
+        <Route path="/problems" element={isSignedIn ? <ProblemsPage /> : <Navigate to="/" />} />
       </Routes>
 
       <Toaster />
