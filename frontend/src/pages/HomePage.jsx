@@ -115,6 +115,7 @@ const HomePage = () => {
                     </div>
 
                     {/* Right Side */}
+                    {/*TODO: Add animation to the hero image with floating elements*/}
                     <img
                         src={heroImg}
                         alt="Hero Image"
