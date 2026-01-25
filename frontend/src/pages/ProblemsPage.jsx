@@ -22,7 +22,7 @@ const ProblemsPage = () => {
         <div className="space-y-4">
           {problems.map((problem) => (
             <Link key={problem.id}
-              to={`/problems/${problem.id}`}
+              to={`/problem/${problem.id}`}
               className="card bg-base-200 hover:scale-[1.01] transition-transform duration-200">
               <div className="card-body">
                 <div className="flex items-center justify-between gap-4">
