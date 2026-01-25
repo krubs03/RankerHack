@@ -18,7 +18,7 @@ const HomePage = () => {
                         <div className="size-11 rounded-xl bg-linear-to-br
                         from-secondary via-violet-800 to-accent
                         items-center justify-center flex p-2 shadow-lg">
-                            <img className="w-7 h-7" src={logoImg} alt="Logo" />
+                            <img className="size-7" src={logoImg} alt="Logo" />
                         </div>
 
                         <div className="flex flex-col">

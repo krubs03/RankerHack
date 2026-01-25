@@ -68,6 +68,7 @@ export async function getActiveSessions(_, res) {
     // Find sessions on basis of status, populate host details, and return utmost 20 recent sessions
     const sessions = await Session.find({ status: STATUS.ACTIVE })
       .populate("host", "name email clerkId profilePicture")
+      .populate("participant", "name email clerkId profilePicture") 
       .sort({ createdAt: -1 })
       .limit(20);
 

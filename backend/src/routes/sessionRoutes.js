@@ -13,8 +13,8 @@ const router = express.Router();
 
 router.post("/", protectRoute, createNewSession);
 router.get("/active", protectRoute, getActiveSessions);
-router.get("/:sessionId", protectRoute, getSessionById);
 router.get("/recent", protectRoute, getRecentSessions);
+router.get("/:sessionId", protectRoute, getSessionById);
 
 router.post("/:sessionId/join", protectRoute, joinSession);
 router.post("/:sessionId/end", protectRoute, endSession);

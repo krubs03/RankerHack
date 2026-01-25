@@ -22,8 +22,8 @@ const sessionSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["in_progress", "completed"],
-    default: "in_progress",
+    enum: ["active", "completed"],
+    default: "active",
   },
   //Stream session ID
   sessionId: {
