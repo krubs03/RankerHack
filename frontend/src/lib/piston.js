@@ -2,7 +2,7 @@
 const PISTON_URL = "https://emkc.org/api/v2/piston";
 
 const LANGUAGES = {
-  javacscript: {
+  javascript: {
     language: "javascript",
     version: "18.15.0",
   },

@@ -10,7 +10,7 @@ export const sessionApi = {
     return response.data;
   },
   getRecentSessions: async () => {
-    const response = await instance.get("/apisessions/recent");
+    const response = await instance.get("/api/sessions/recent");
     return response.data;
   },
   getSessionById: async (id) => {
@@ -25,7 +25,7 @@ export const sessionApi = {
     const response = await instance.post(`/api/sessions/${id}/end`);
     return response.data;
   },
-  getStreamTokem: async () => {
+  getStreamToken: async () => {
     const response = await instance.get("/api/chat/token");
     return response.data;
   },

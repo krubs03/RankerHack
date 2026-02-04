@@ -34,4 +34,15 @@ app.use(
 app.use("/api/chat", chatRoutes);
 app.use("/api/sessions", sessionRoutes);
 
+const startServer = async () => {
+  try {
+    await connectDB();
+    app.listen(ENV.PORT, () => console.log("Server is running on port:", ENV.PORT));
+  } catch (error) {
+    console.error("💥 Error starting the server", error);
+  }
+};
+
+startServer();
+
 export default app;

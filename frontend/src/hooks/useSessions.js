@@ -38,24 +38,22 @@ export const useSessionById = (id) => {
   });
 };
 
-export const useJoinSession = (id) => {
+export const useJoinSession = () => {
   return useMutation({
-    mutationKey: ["joinSession-", id],
-    mutationFn: () => sessionApi.joinSession(id),
+    mutationKey: ["joinSession"],
+    mutationFn: sessionApi.joinSession,
     onSuccess: () => toast.success("Joined session successfully!"),
     onError: (err) =>
       toast.error(err.response?.data?.message || "Failed to join session."),
-    enabled: !!id,
   });
 };
 
-export const useEndSession = (id) => {
+export const useEndSession = () => {
   return useMutation({
-    mutationKey: ["endSession-", id],
-    mutationFn: () => sessionApi.endSession(id),
+    mutationKey: ["endSession"],
+    mutationFn: sessionApi.endSession,
     onSuccess: () => toast.success("Session ended successfully!"),
     onError: (err) =>
-      toast.error(err.response?.data?.message || "Failed to end session."),
-    enabled: !!id,
+      toast.error(err.response?.data?.message || "Failed to end session.")
   });
 };
