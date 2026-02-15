@@ -19,6 +19,4 @@ router.get("/:sessionId", protectRoute, getSessionById);
 router.post("/:sessionId/join", protectRoute, joinSession);
 router.post("/:sessionId/end", protectRoute, endSession);
 
-//TODO: Get participants for sessions
-
 export default router;

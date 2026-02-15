@@ -2,9 +2,6 @@ import javaIcon from "../../public/java.png";
 import javaScriptIcon from "../../public/javascript.png";
 import pythonIcon from "../../public/python.png";
 
-{
-  /*TODO: Add more problems as needed*/
-}
 export const PROBLEMS = {
   "two-sum": {
     id: "two-sum",
@@ -351,6 +348,306 @@ print(maxArea([1,1]))  # Expected: 1`,
       javascript: "49\n1",
       python: "49\n1",
       java: "49\n1",
+    },
+  },
+  "best-time-to-buy-sell-stock": {
+    id: "best-time-to-buy-sell-stock",
+    title: "Best Time to Buy and Sell Stock",
+    difficulty: "Easy",
+    category: "Array • Greedy",
+    description: {
+      text: "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+      notes: [
+        "You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.",
+        "Return the maximum profit you can achieve. If you cannot achieve any profit, return 0.",
+      ],
+    },
+    examples: [
+      { input: "prices = [7,1,5,3,6,4]", output: "5" },
+      { input: "prices = [7,6,4,3,1]", output: "0" },
+    ],
+    constraints: ["1 ≤ prices.length ≤ 10⁵", "0 ≤ prices[i] ≤ 10⁴"],
+    starterCode: {
+      javascript: `function maxProfit(prices) {
+  // Write your solution here
+}`,
+      python: `def maxProfit(prices):
+    pass`,
+      java: `class Solution {
+  public static int maxProfit(int[] prices) {
+    return 0;
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "5\n0",
+      python: "5\n0",
+      java: "5\n0",
+    },
+  },
+
+  "contains-duplicate": {
+    id: "contains-duplicate",
+    title: "Contains Duplicate",
+    difficulty: "Easy",
+    category: "Array • Hash Table",
+    description: {
+      text: "Given an integer array nums, return true if any value appears at least twice.",
+      notes: ["Return false if every element is distinct."],
+    },
+    examples: [
+      { input: "nums = [1,2,3,1]", output: "true" },
+      { input: "nums = [1,2,3,4]", output: "false" },
+    ],
+    constraints: ["1 ≤ nums.length ≤ 10⁵"],
+    starterCode: {
+      javascript: `function containsDuplicate(nums) {
+  // Write your solution here
+}`,
+      python: `def containsDuplicate(nums):
+    pass`,
+      java: `class Solution {
+  public static boolean containsDuplicate(int[] nums) {
+    return false;
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "true\nfalse",
+      python: "True\nFalse",
+      java: "true\nfalse",
+    },
+  },
+
+  "merge-two-sorted-lists": {
+    id: "merge-two-sorted-lists",
+    title: "Merge Two Sorted Lists",
+    difficulty: "Easy",
+    category: "Linked List • Recursion",
+    description: {
+      text: "Merge two sorted linked lists and return it as a sorted list.",
+      notes: ["The list should be made by splicing together the nodes."],
+    },
+    examples: [
+      { input: "l1 = [1,2,4], l2 = [1,3,4]", output: "[1,1,2,3,4,4]" },
+    ],
+    constraints: ["0 ≤ nodes ≤ 50"],
+    starterCode: {
+      javascript: `function mergeTwoLists(l1, l2) {
+  // Write your solution here
+}`,
+      python: `def mergeTwoLists(l1, l2):
+    pass`,
+      java: `class Solution {
+  public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    return null;
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "[1,1,2,3,4,4]",
+      python: "[1, 1, 2, 3, 4, 4]",
+      java: "[1, 1, 2, 3, 4, 4]",
+    },
+  },
+
+  "product-of-array-except-self": {
+    id: "product-of-array-except-self",
+    title: "Product of Array Except Self",
+    difficulty: "Medium",
+    category: "Array • Prefix Sum",
+    description: {
+      text: "Given an integer array nums, return an array answer such that answer[i] is the product of all elements except nums[i].",
+      notes: ["Do not use division."],
+    },
+    examples: [{ input: "nums = [1,2,3,4]", output: "[24,12,8,6]" }],
+    constraints: ["2 ≤ nums.length ≤ 10⁵"],
+    starterCode: {
+      javascript: `function productExceptSelf(nums) {
+  // Write your solution here
+}`,
+      python: `def productExceptSelf(nums):
+    pass`,
+      java: `class Solution {
+  public static int[] productExceptSelf(int[] nums) {
+    return new int[0];
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "[24,12,8,6]",
+      python: "[24, 12, 8, 6]",
+      java: "[24, 12, 8, 6]",
+    },
+  },
+
+  "longest-substring-without-repeating": {
+    id: "longest-substring-without-repeating",
+    title: "Longest Substring Without Repeating Characters",
+    difficulty: "Medium",
+    category: "String • Sliding Window",
+    description: {
+      text: "Given a string s, find the length of the longest substring without repeating characters.",
+      notes: [],
+    },
+    examples: [
+      { input: 's = "abcabcbb"', output: "3" },
+      { input: 's = "bbbbb"', output: "1" },
+    ],
+    constraints: ["0 ≤ s.length ≤ 5 * 10⁴"],
+    starterCode: {
+      javascript: `function lengthOfLongestSubstring(s) {
+  // Write your solution here
+}`,
+      python: `def lengthOfLongestSubstring(s):
+    pass`,
+      java: `class Solution {
+  public static int lengthOfLongestSubstring(String s) {
+    return 0;
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "3\n1",
+      python: "3\n1",
+      java: "3\n1",
+    },
+  },
+  "climbing-stairs": {
+    id: "climbing-stairs",
+    title: "Climbing Stairs",
+    difficulty: "Easy",
+    category: "Dynamic Programming",
+    description: {
+      text: "You are climbing a staircase. It takes n steps to reach the top.",
+      notes: [
+        "Each time you can either climb 1 or 2 steps.",
+        "Return the number of distinct ways you can climb to the top.",
+      ],
+    },
+    examples: [
+      { input: "n = 2", output: "2" },
+      { input: "n = 3", output: "3" },
+    ],
+    constraints: ["1 ≤ n ≤ 45"],
+    starterCode: {
+      javascript: `function climbStairs(n) {
+  // Write your solution here
+}`,
+      python: `def climbStairs(n):
+    pass`,
+      java: `class Solution {
+  public static int climbStairs(int n) {
+    return 0;
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "2\n3",
+      python: "2\n3",
+      java: "2\n3",
+    },
+  },
+
+  "intersection-of-two-arrays": {
+    id: "intersection-of-two-arrays",
+    title: "Intersection of Two Arrays",
+    difficulty: "Easy",
+    category: "Array • Hash Set",
+    description: {
+      text: "Given two integer arrays nums1 and nums2, return their intersection.",
+      notes: ["Each element in the result must be unique."],
+    },
+    examples: [{ input: "nums1 = [1,2,2,1], nums2 = [2,2]", output: "[2]" }],
+    constraints: ["1 ≤ nums1.length, nums2.length ≤ 1000"],
+    starterCode: {
+      javascript: `function intersection(nums1, nums2) {
+  // Write your solution here
+}`,
+      python: `def intersection(nums1, nums2):
+    pass`,
+      java: `class Solution {
+  public static int[] intersection(int[] nums1, int[] nums2) {
+    return new int[0];
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "[2]",
+      python: "[2]",
+      java: "[2]",
+    },
+  },
+
+  "median-of-two-sorted-arrays": {
+    id: "median-of-two-sorted-arrays",
+    title: "Median of Two Sorted Arrays",
+    difficulty: "Hard",
+    category: "Binary Search • Divide and Conquer",
+    description: {
+      text: "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.",
+      notes: ["The overall run time complexity should be O(log (m+n))."],
+    },
+    examples: [
+      { input: "nums1 = [1,3], nums2 = [2]", output: "2.0" },
+      { input: "nums1 = [1,2], nums2 = [3,4]", output: "2.5" },
+    ],
+    constraints: ["0 ≤ m,n ≤ 1000"],
+    starterCode: {
+      javascript: `function findMedianSortedArrays(nums1, nums2) {
+  // Write your solution here
+}`,
+      python: `def findMedianSortedArrays(nums1, nums2):
+    pass`,
+      java: `class Solution {
+  public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    return 0.0;
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "2\n2.5",
+      python: "2\n2.5",
+      java: "2\n2.5",
+    },
+  },
+
+  "word-ladder": {
+    id: "word-ladder",
+    title: "Word Ladder",
+    difficulty: "Hard",
+    category: "Graph • BFS",
+    description: {
+      text: "Given two words (beginWord and endWord), and a dictionary wordList, return the length of the shortest transformation sequence.",
+      notes: [
+        "Only one letter can be changed at a time.",
+        "Each transformed word must exist in the word list.",
+      ],
+    },
+    examples: [
+      {
+        input:
+          'beginWord="hit", endWord="cog", wordList=["hot","dot","dog","lot","log","cog"]',
+        output: "5",
+      },
+    ],
+    constraints: ["1 ≤ wordList.length ≤ 5000"],
+    starterCode: {
+      javascript: `function ladderLength(beginWord, endWord, wordList) {
+  // Write your solution here
+}`,
+      python: `def ladderLength(beginWord, endWord, wordList):
+    pass`,
+      java: `class Solution {
+  public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    return 0;
+  }
+}`,
+    },
+    expectedOutput: {
+      javascript: "5",
+      python: "5",
+      java: "5",
     },
   },
 };

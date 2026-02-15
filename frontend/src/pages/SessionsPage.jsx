@@ -13,6 +13,7 @@ import Output from "../components/Output.jsx";
 import { useStreamClient } from "../hooks/useStreamClient.js";
 import { StreamCall, StreamVideo } from "@stream-io/video-react-sdk";
 import VideoCallWindow from "../components/VideoCallWindow.jsx";
+import ConfirmDialog from "../components/ConfirmDialog.jsx";
 
 const SessionsPage = () => {
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ const SessionsPage = () => {
     const { user } = useUser();
     const [isRunning, setIsRunning] = useState(false);
     const [output, setOutput] = useState(null);
+    const [confirmOpen, setConfirmOpen] = useState(false);
 
     const { data: sessionData, isLoading: sessionLoading, refetch } = useSessionById(id);
     const joinSessionMutation = useJoinSession();
@@ -69,14 +71,19 @@ const SessionsPage = () => {
         setIsRunning(false);
     }
 
-    //TODO: Bring up a custom modal rather than an inbuilt confirm
+    const confirmEndSession = () => {
+        setConfirmOpen(false);
+        endSessionMutation.mutate(id, {
+            onSuccess: () => navigate("/dashboard")
+        });
+    };
+
+    const cancelEndSession = () => {
+        setConfirmOpen(false);
+    };
+
     const handleEndSession = async () => {
-        if (confirm("Are you sure you want to end the session?")) {
-            //Navigates HOST back to Dashboard
-            endSessionMutation.mutate(id, {
-                onSuccess: () => navigate("/dashboard")
-            })
-        }
+        setConfirmOpen(true);
     }
 
     //Navigates PARTICIPANT to Dashboard
@@ -206,7 +213,7 @@ const SessionsPage = () => {
                                     </div>
                                 </div>
                             </Panel>
-                            <Separator className="h-1.5 bg-primary/50 hover:bg-primary active:bg-primary
+                            <Separator className="h-1 bg-primary/50 hover:bg-primary active:bg-primary
                              focus:outline-none focus-visible:outline-none transition-colors cursor-row-resize" />
                             <Panel defaultSize={60} minSize={30}>
                                 <Group orientation="vertical">
@@ -220,7 +227,7 @@ const SessionsPage = () => {
                                             onRunCode={handleRunCode}
                                         />
                                     </Panel>
-                                    <Separator className="h-1.5 bg-primary/50 hover:bg-primary active:bg-primary
+                                    <Separator className="h-1 bg-primary/50 hover:bg-primary active:bg-primary
                              focus:outline-none focus-visible:outline-none transition-colors cursor-row-resize" />
                                     <Panel defaultSize={40} minSize={20}>
                                         <Output
@@ -230,7 +237,7 @@ const SessionsPage = () => {
                             </Panel>
                         </Group>
                     </Panel>
-                    <Separator className="w-1.5 bg-primary/50 hover:bg-primary
+                    <Separator className="w-1 bg-primary/50 hover:bg-primary
                      focus:outline-none focus-visible:outline-none transition-colors cursor-col-resize" />
 
                     {/* Right Panel => Video call & Chat window*/}
@@ -269,6 +276,13 @@ const SessionsPage = () => {
                     </Panel>
                 </Group>
 
+                <ConfirmDialog
+                    open={confirmOpen}
+                    message="Are you sure you want to end the session?"
+                    onConfirm={confirmEndSession}
+                    onCancel={cancelEndSession}
+                    loading={endSessionMutation.isPending}
+                />
             </div>
         </div>
     )
